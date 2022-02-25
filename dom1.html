@@ -1,0 +1,46 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <script>
+        function Complete()
+        {
+            if(document.Form.Pwd.value==document.Form.Pwd1.value)
+                alert("You have successfully registered\nName="+document.Form.Name.value+"\nPassword="+document.Form.Pwd.value);
+            else
+                alert("Password error, try again!");
+        }
+
+    </script>
+</head>
+<body>
+<H1>Register form:</H1>
+<FORM NAME="Form">
+    <TABLE>
+        <TR><TD><B>Write down your name:</B></TD>
+            <TD><INPUT name="Name" SIZE=15
+                       onBlur="this.value=this.value.toUpperCase()"></TD></TR>
+
+        <TR><TD><B>Enter your password:</B></TD>
+            <TD><INPUT TYPE="pwd" NAME="Pwd" SIZE=15
+                       onFocus="this.select();"></TD></TR>
+        <TR><TD><B>Confirm the password:</B></TD>
+            <TD><INPUT TYPE="pwd" NAME="Pwd1" SIZE=15
+                       onFocus="this.select();"></TD></TR>
+    </TABLE>
+    <INPUT TYPE="button" VALUE="Register" onClick="Complete();">
+</FORM>
+<script>
+  function form(){
+    var name = document.forms["Form"]["Name"];
+    var pwd = document.forms["Form"]["Password"];
+
+    if (name.value == "") {
+          window.alert("Please, enter your name!");
+          name.focus();
+          return false;
+      }
+  }
+</script>
+
+</body>
+</html>
